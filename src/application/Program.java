@@ -22,7 +22,10 @@ public class Program {
 				System.out.println();
 				System.out.print("Origem a ser movimentada: ");
 				ChessPosition source = UI.readChessPosition(sc);
-			
+				
+				boolean[][] possibleMoves = chessMatch.possibleMoves(source);
+				UI.clearScreen();
+				UI.printBoard(chessMatch.getPieces(), possibleMoves);			
 				System.out.println();
 				System.out.print("Destino da movimentação: ");
 				ChessPosition target = UI.readChessPosition(sc);
